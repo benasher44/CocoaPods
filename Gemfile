@@ -63,3 +63,5 @@ group :debugging do
   gem 'awesome_print'
   gem 'ruby-prof', :platforms => [:ruby]
 end
+
+gem 'fourflusher', :git => 'https://github.com/benasher44/fourflusher', :ref => '4fb56fd1eebc6c262288809347ad9070a1624fe5'
