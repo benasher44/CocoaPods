@@ -9,7 +9,7 @@ module Pod
 
     # Product types where the product's frameworks must be embedded in a host target
     #
-    EMBED_FRAMEWORKS_IN_HOST_TARGET_TYPES = [:app_extension, :framework, :static_library, :messages_extension, :watch_extension, :xpc_service].freeze
+    EMBED_FRAMEWORKS_IN_HOST_TARGET_TYPES = [:app_extension, :framework, :dynamic_library, :static_library, :messages_extension, :watch_extension, :xpc_service].freeze
 
     # Initialize a new instance
     #

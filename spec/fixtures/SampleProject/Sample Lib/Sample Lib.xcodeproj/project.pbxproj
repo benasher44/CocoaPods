@@ -9,12 +9,24 @@
 /* Begin PBXBuildFile section */
 		137F16161D3AFC2900029696 /* Sample Framework.h in Headers */ = {isa = PBXBuildFile; fileRef = 137F16151D3AFC2900029696 /* Sample Framework.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		137F161C1D3AFC6700029696 /* Sample.m in Sources */ = {isa = PBXBuildFile; fileRef = 137F161B1D3AFC6700029696 /* Sample.m */; };
+		13C565991E84143A0059B3C3 /* SampleDylib.m in Sources */ = {isa = PBXBuildFile; fileRef = 13C565981E84143A0059B3C3 /* SampleDylib.m */; };
+		13C5659A1E84143A0059B3C3 /* SampleDylib.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 13C565971E84143A0059B3C3 /* SampleDylib.h */; };
 		51E94E13164472080035348C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 51E94E12164472080035348C /* Foundation.framework */; };
 		51E94E18164472090035348C /* Sample_Lib.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 51E94E17164472090035348C /* Sample_Lib.h */; };
 		51E94E1A164472090035348C /* Sample_Lib.m in Sources */ = {isa = PBXBuildFile; fileRef = 51E94E19164472090035348C /* Sample_Lib.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		13C565931E84143A0059B3C3 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/$(PRODUCT_NAME)";
+			dstSubfolderSpec = 16;
+			files = (
+				13C5659A1E84143A0059B3C3 /* SampleDylib.h in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		51E94E0D164472080035348C /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -32,6 +44,9 @@
 		137F16151D3AFC2900029696 /* Sample Framework.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Sample Framework.h"; sourceTree = "<group>"; };
 		137F16171D3AFC2900029696 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		137F161B1D3AFC6700029696 /* Sample.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Sample.m; sourceTree = "<group>"; };
+		13C565951E84143A0059B3C3 /* libSampleDylib.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libSampleDylib.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		13C565971E84143A0059B3C3 /* SampleDylib.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SampleDylib.h; sourceTree = "<group>"; };
+		13C565981E84143A0059B3C3 /* SampleDylib.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SampleDylib.m; sourceTree = "<group>"; };
 		51E94E0F164472080035348C /* libSampleLib.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libSampleLib.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		51E94E12164472080035348C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		51E94E16164472090035348C /* Sample Lib-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Sample Lib-Prefix.pch"; sourceTree = "<group>"; };
@@ -41,6 +56,13 @@
 
 /* Begin PBXFrameworksBuildPhase section */
 		137F160F1D3AFC2900029696 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		13C565921E84143A0059B3C3 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -68,11 +90,21 @@
 			path = "Sample Framework";
 			sourceTree = "<group>";
 		};
+		13C565961E84143A0059B3C3 /* SampleDylib */ = {
+			isa = PBXGroup;
+			children = (
+				13C565971E84143A0059B3C3 /* SampleDylib.h */,
+				13C565981E84143A0059B3C3 /* SampleDylib.m */,
+			);
+			path = SampleDylib;
+			sourceTree = "<group>";
+		};
 		51E94E04164472080035348C = {
 			isa = PBXGroup;
 			children = (
 				51E94E14164472090035348C /* Sample Lib */,
 				137F16141D3AFC2900029696 /* Sample Framework */,
+				13C565961E84143A0059B3C3 /* SampleDylib */,
 				51E94E11164472080035348C /* Frameworks */,
 				51E94E10164472080035348C /* Products */,
 			);
@@ -83,6 +115,7 @@
 			children = (
 				51E94E0F164472080035348C /* libSampleLib.a */,
 				137F16131D3AFC2900029696 /* SampleFramework.framework */,
+				13C565951E84143A0059B3C3 /* libSampleDylib.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -145,6 +178,23 @@
 			productReference = 137F16131D3AFC2900029696 /* SampleFramework.framework */;
 			productType = "com.apple.product-type.framework";
 		};
+		13C565941E84143A0059B3C3 /* SampleDylib */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 13C5659D1E84143A0059B3C3 /* Build configuration list for PBXNativeTarget "SampleDylib" */;
+			buildPhases = (
+				13C565911E84143A0059B3C3 /* Sources */,
+				13C565921E84143A0059B3C3 /* Frameworks */,
+				13C565931E84143A0059B3C3 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SampleDylib;
+			productName = SampleDylib;
+			productReference = 13C565951E84143A0059B3C3 /* libSampleDylib.a */;
+			productType = "com.apple.product-type.library.static";
+		};
 		51E94E0E164472080035348C /* SampleLib */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 51E94E1D164472090035348C /* Build configuration list for PBXNativeTarget "SampleLib" */;
@@ -174,6 +224,10 @@
 					137F16121D3AFC2900029696 = {
 						CreatedOnToolsVersion = 7.3.1;
 					};
+					13C565941E84143A0059B3C3 = {
+						CreatedOnToolsVersion = 8.2.1;
+						ProvisioningStyle = Automatic;
+					};
 				};
 			};
 			buildConfigurationList = 51E94E09164472080035348C /* Build configuration list for PBXProject "Sample Lib" */;
@@ -190,6 +244,7 @@
 			targets = (
 				51E94E0E164472080035348C /* SampleLib */,
 				137F16121D3AFC2900029696 /* SampleFramework */,
+				13C565941E84143A0059B3C3 /* SampleDylib */,
 			);
 		};
 /* End PBXProject section */
@@ -210,6 +265,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				137F161C1D3AFC6700029696 /* Sample.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		13C565911E84143A0059B3C3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				13C565991E84143A0059B3C3 /* SampleDylib.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -307,6 +370,75 @@
 			};
 			name = Release;
 		};
+		13C5659B1E84143A0059B3C3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MACH_O_TYPE = mh_dylib;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		13C5659C1E84143A0059B3C3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MACH_O_TYPE = mh_dylib;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
 		51E94E1B164472090035348C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -389,6 +521,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		13C5659D1E84143A0059B3C3 /* Build configuration list for PBXNativeTarget "SampleDylib" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				13C5659B1E84143A0059B3C3 /* Debug */,
+				13C5659C1E84143A0059B3C3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 		51E94E09164472080035348C /* Build configuration list for PBXProject "Sample Lib" */ = {
 			isa = XCConfigurationList;

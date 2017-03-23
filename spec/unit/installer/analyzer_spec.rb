@@ -183,7 +183,7 @@ module Pod
           result = @analyzer.analyze
           sample_project_target, test_runner_target = result.targets.sort_by(&:name)
 
-          sample_project_target.pod_targets.map(&:name).should == %w(libextobjc-iOS5.0)
+          sample_project_target.pod_targets.map(&:name).should == %w(libextobjc-iOS8.0)
           test_runner_target.pod_targets.map(&:name).should == %w(libextobjc-iOS5.1)
 
           sample_project_target.user_targets.map(&:name).should == %w(SampleProject)
@@ -782,6 +782,30 @@ module Pod
             end
 
             target 'SampleLib' do
+              project 'SampleProject/Sample Lib/Sample Lib'
+              pod 'monkey'
+            end
+          end
+          analyzer = Pod::Installer::Analyzer.new(config.sandbox, podfile)
+          result = analyzer.analyze
+
+          result.targets.select { |at| at.name == 'Pods-SampleProject' }.flat_map(&:pod_targets).map(&:name).sort.uniq.should == %w(
+            JSONKit
+            monkey
+          ).sort
+        end
+
+        it "copy a dynamic library's pod target, when the dynamic library is in a sub project" do
+          podfile = Pod::Podfile.new do
+            source SpecHelper.test_repo_url
+            platform :ios, '8.0'
+            project 'SampleProject/SampleProject'
+
+            target 'SampleProject' do
+              pod 'JSONKit'
+            end
+
+            target 'SampleDylib' do
               project 'SampleProject/Sample Lib/Sample Lib'
               pod 'monkey'
             end

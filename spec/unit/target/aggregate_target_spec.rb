@@ -219,6 +219,16 @@ module Pod
             @target.requires_host_target?.should == true
           end
 
+          it 'requires a host target for static library targets' do
+            @target.user_targets.first.stubs(:symbol_type).returns(:static_library)
+            @target.requires_host_target?.should == true
+          end
+
+          it 'requires a host target for dynamic library targets' do
+            @target.user_targets.first.stubs(:symbol_type).returns(:dynamic_library)
+            @target.requires_host_target?.should == true
+          end
+
           it 'requires a host target for messages extension targets' do
             @target.user_targets.first.stubs(:symbol_type).returns(:messages_extension)
             @target.requires_host_target?.should == true
